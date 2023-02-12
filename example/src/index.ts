@@ -1,3 +1,4 @@
-export const a = () => {
-  console.log(2222);
-};
+export { a } from "./a";
+export { b } from "./b";
+
+const c = 2;
