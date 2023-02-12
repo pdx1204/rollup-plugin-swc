@@ -1,6 +1,20 @@
-import { a } from "./a";
-import { b } from "./b";
+import type { Plugin as RollupPlugin } from "rollup";
 
-a("Quincy Qiu", 26);
+import { transform } from "@swc/core";
 
-b();
+export default function swc(option: any = {}): RollupPlugin {
+  return {
+    name: "swc",
+    version: "0.0.1",
+    transform(code, id) {
+      transform(code).then((value) => {
+        console.log(value);
+      });
+      console.log(code, id);
+      return {
+        code,
+        map: null,
+      };
+    },
+  };
+}
