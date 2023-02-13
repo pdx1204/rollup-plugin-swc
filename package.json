@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "type": "module",
   "description": "The one plugin uses swc to compile and minimize code in rollup",
+  "keywords": ["rollup", "swc", "rollup-plugin-swc"],
   "main": "dist/index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
