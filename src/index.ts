@@ -4,7 +4,9 @@ import { transformSync as transformSyncSwc } from "@swc/core";
 import type { Options as SwcOption } from "@swc/core";
 import { DEFAULT_OPTIONS } from "./constant";
 
-export type RollupPluginSwcOption = SwcOption & {};
+export type RollupPluginSwcOption = SwcOption & {
+  type: "typescript" | "ecmascript";
+};
 
 export default function swc(
   option: RollupPluginSwcOption = DEFAULT_OPTIONS
@@ -43,10 +45,16 @@ export default function swc(
       if (!importer) {
         return null;
       }
-      return this.resolve(source + ".ts", importer, {
-        skipSelf: true,
-        ...options,
-      });
+      if (option.type === "typescript")
+        return this.resolve(source + ".ts", importer, {
+          skipSelf: true,
+          ...options,
+        });
+      else
+        return this.resolve(source, importer, {
+          skipSelf: true,
+          ...options,
+        });
     },
     transform(code, id) {
       const result = transformSyncSwc(code, {
