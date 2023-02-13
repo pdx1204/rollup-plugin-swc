@@ -4,7 +4,6 @@
 
 import typescript from "@rollup/plugin-typescript";
 import commonjs from "@rollup/plugin-commonjs";
-import json from "@rollup/plugin-json";
 
 export default {
   external: ["@swc/core"],
@@ -14,5 +13,5 @@ export default {
     { file: "dist/index.mjs", format: "es" },
   ],
 
-  plugins: [typescript(), commonjs(), json()],
+  plugins: [typescript(), commonjs()],
 };
