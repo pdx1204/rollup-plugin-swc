@@ -1,6 +1,6 @@
 {
   "name": "@qiuqfang/rollup-plugin-swc",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "type": "module",
   "description": "The one plugin uses swc to compile and minimize code in rollup",
   "keywords": ["rollup", "swc", "rollup-plugin-swc"],
