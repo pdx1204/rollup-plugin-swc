@@ -1,17 +1,19 @@
 import type { Plugin as RollupPlugin } from "rollup";
 
 import { transformSync as transformSyncSwc } from "@swc/core";
-import type { Options as SwcOption } from "@swc/core";
+import type { Options as SwcOption, ParserConfig } from "@swc/core";
 import { DEFAULT_OPTIONS } from "./constant";
+import packageJson from "../package.json";
 
 export type RollupPluginSwcOption = SwcOption & {
-  type: "typescript" | "ecmascript";
+  syntax: "typescript" | "ecmascript";
 };
 
 export default function swc(
   option: RollupPluginSwcOption = DEFAULT_OPTIONS
 ): RollupPlugin {
   const {
+    syntax,
     script,
     cwd,
     caller,
@@ -31,21 +33,25 @@ export default function swc(
     test,
     exclude,
     env,
-    jsc,
     module,
     minify,
     sourceMaps,
     inlineSourcesContent,
   } = option;
 
+  const parser: ParserConfig = { syntax, ...option.jsc?.parser };
+
+  const jsc = Object.assign({}, option.jsc, {
+    parser,
+  });
   return {
     name: "swc",
-    version: "0.0.1",
+    version: packageJson.version,
     resolveId(source, importer, options) {
       if (!importer) {
         return null;
       }
-      if (option.type === "typescript")
+      if (syntax === "typescript")
         return this.resolve(source + ".ts", importer, {
           skipSelf: true,
           ...options,
