@@ -52,7 +52,7 @@ export default function swc(
         return null;
       }
       if (syntax === "typescript")
-        return this.resolve(source + ".ts", importer, {
+        return this.resolve(`${source}.ts`, importer, {
           skipSelf: true,
           ...options,
         });
