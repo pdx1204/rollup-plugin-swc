@@ -10,6 +10,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "rollup -c",
+    "example": "pnpm build && pnpm -C ./example build",
     "check": "rome check .",
     "format": "rome format . --write"
   },
