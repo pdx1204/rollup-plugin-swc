@@ -9,9 +9,7 @@ export type RollupPluginSwcOption = SwcOption & {
   syntax: "typescript" | "ecmascript";
 };
 
-export default function swc(
-  option: RollupPluginSwcOption = DEFAULT_OPTIONS
-): RollupPlugin {
+export default function swc(option: RollupPluginSwcOption = DEFAULT_OPTIONS): RollupPlugin {
   const {
     syntax,
     script,
