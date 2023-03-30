@@ -2,7 +2,7 @@
  * @type {import('rollup').RollupOptions}
  */
 
-import swc from "@qiuqfang/rollup-plugin-swc";
+import swc from "../dist/index.mjs";
 
 export default {
   input: "./src/index.ts",

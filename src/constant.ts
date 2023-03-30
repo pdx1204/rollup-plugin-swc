@@ -1,4 +1,4 @@
-import { RollupPluginSwcOption } from "./index";
+import { RollupPluginSwcOption } from ".";
 
 export const DEFAULT_OPTIONS: RollupPluginSwcOption = {
   syntax: "typescript",

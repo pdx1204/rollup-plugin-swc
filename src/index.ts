@@ -3,15 +3,16 @@ import type { Plugin as RollupPlugin } from "rollup";
 import { transformSync as transformSyncSwc } from "@swc/core";
 import type { Options as SwcOption, ParserConfig } from "@swc/core";
 import { DEFAULT_OPTIONS } from "./constant";
-import packageJson from "../package.json";
+
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import { version } from "../package.json";
 
 export type RollupPluginSwcOption = SwcOption & {
   syntax: "typescript" | "ecmascript";
 };
 
-export default function swc(
-  option: RollupPluginSwcOption = DEFAULT_OPTIONS
-): RollupPlugin {
+export default function swc(option: RollupPluginSwcOption = DEFAULT_OPTIONS): RollupPlugin {
   const {
     syntax,
     script,
@@ -46,7 +47,7 @@ export default function swc(
   });
   return {
     name: "swc",
-    version: packageJson.version,
+    version,
     resolveId(source, importer, options) {
       if (!importer) {
         return null;
