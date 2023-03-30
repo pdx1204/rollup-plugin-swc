@@ -2,6 +2,7 @@
  * @type {import('rollup').RollupOptions}
  */
 
+import nodeResolve from "@rollup/plugin-node-resolve";
 import swc from "../dist/index.mjs";
 
 export default {
@@ -10,5 +11,5 @@ export default {
     { file: "dist/index.js", format: "cjs" },
     { file: "dist/index.mjs", format: "es" },
   ],
-  plugins: [swc()],
+  plugins: [swc(), nodeResolve({ extensions: [".ts", ".js", ".json"] })],
 };

@@ -48,21 +48,6 @@ export default function swc(option: RollupPluginSwcOption = DEFAULT_OPTIONS): Ro
   return {
     name: "swc",
     version,
-    resolveId(source, importer, options) {
-      if (!importer) {
-        return null;
-      }
-      if (syntax === "typescript")
-        return this.resolve(`${source}.ts`, importer, {
-          skipSelf: true,
-          ...options,
-        });
-      else
-        return this.resolve(source, importer, {
-          skipSelf: true,
-          ...options,
-        });
-    },
     transform(code, id) {
       const result = transformSyncSwc(code, {
         script,
