@@ -8,7 +8,7 @@ specifiers:
   '@commitlint/config-conventional': ^17.4.4
   '@qiuqfang/eslint-config': ^0.0.6
   '@rollup/plugin-babel': ^6.0.3
-  '@rollup/plugin-commonjs': ^24.0.1
+  '@rollup/plugin-commonjs': ^25.0.0
   '@rollup/plugin-json': ^6.0.0
   '@rollup/plugin-node-resolve': ^15.0.1
   '@rollup/plugin-typescript': ^11.0.0
@@ -35,7 +35,7 @@ devDependencies:
   '@commitlint/config-conventional': 17.4.4
   '@qiuqfang/eslint-config': 0.0.6_bcnce6t2n5ss3lv2getliffzhq
   '@rollup/plugin-babel': 6.0.3_dwz2afgufjjmlztfppvxz5usou
-  '@rollup/plugin-commonjs': 24.0.1_rollup@3.15.0
+  '@rollup/plugin-commonjs': 25.0.2_rollup@3.15.0
   '@rollup/plugin-json': 6.0.0_rollup@3.15.0
   '@rollup/plugin-node-resolve': 15.0.1_rollup@3.15.0
   '@rollup/plugin-typescript': 11.0.0_qlirtk4gwd7adry2ekft257nli
@@ -1612,8 +1612,8 @@ packages:
       rollup: 3.15.0
     dev: true
 
-  /@rollup/plugin-commonjs/24.0.1_rollup@3.15.0:
-    resolution: {integrity: sha512-15LsiWRZk4eOGqvrJyu3z3DaBu5BhXIMeWnijSRvd8irrrg9SHpQ1pH+BUK4H6Z9wL9yOxZJMTLU+Au86XHxow==}
+  /@rollup/plugin-commonjs/25.0.2_rollup@3.15.0:
+    resolution: {integrity: sha512-NGTwaJxIO0klMs+WSFFtBP7b9TdTJ3K76HZkewT8/+yHzMiUGVQgaPtLQxNVYIgT5F7lxkEyVID+yS3K7bhCow==}
     engines: {node: '>=14.0.0'}
     peerDependencies:
       rollup: ^2.68.0||^3.0.0
