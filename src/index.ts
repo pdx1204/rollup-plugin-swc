@@ -12,7 +12,7 @@ export type RollupPluginSwcOption = SwcOption & {
   syntax: "typescript" | "ecmascript";
 };
 
-export default function swc(option: RollupPluginSwcOption = DEFAULT_OPTIONS): RollupPlugin {
+export default function swc(option: RollupPluginSwcOption): RollupPlugin {
   const {
     syntax,
     script,
@@ -38,7 +38,7 @@ export default function swc(option: RollupPluginSwcOption = DEFAULT_OPTIONS): Ro
     minify,
     sourceMaps,
     inlineSourcesContent,
-  } = option;
+  } = { ...DEFAULT_OPTIONS, ...option } as RollupPluginSwcOption;
 
   const parser: ParserConfig = { syntax, ...option.jsc?.parser };
 
