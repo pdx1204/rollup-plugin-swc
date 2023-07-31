@@ -1,6 +1,6 @@
 {
   "name": "@qiuqfang/rollup-plugin-swc",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "The one plugin uses swc to compile and minimize code in rollup",
   "keywords": [
     "rollup",
@@ -32,7 +32,7 @@
     "dist"
   ],
   "author": "Quincy Qiu",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.21.3",
     "@babel/preset-env": "^7.20.2",
